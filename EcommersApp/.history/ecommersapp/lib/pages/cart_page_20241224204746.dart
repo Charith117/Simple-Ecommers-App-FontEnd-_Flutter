@@ -1,0 +1,28 @@
+import 'package:flutter/material.dart';
+
+class CartPage extends StatefulWidget {
+  const CartPage({super.key});
+
+  @override
+  State<CartPage> createState() => _CartPageState();
+}
+
+
+class _CartPageState extends State<CartPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body:Container(
+        color: const Color.fromARGB(255, 255, 0, 0),
+        child: Center(
+          child: Text("Cart Page",
+          style: TextStyle(
+            fontSize: 30,
+            fontWeight: FontWeight.bold,
+          ),
+          ),
+        ),
+      ),
+    );
+  }
+}

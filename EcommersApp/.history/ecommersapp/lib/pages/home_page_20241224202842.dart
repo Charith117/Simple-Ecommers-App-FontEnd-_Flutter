@@ -1,0 +1,48 @@
+import 'package:ecommersapp/components/bottom_nav_bar.dart';
+import 'package:ecommersapp/pages/cart_page.dart';
+import 'package:ecommersapp/pages/shop_page.dart';
+import 'package:flutter/material.dart';
+
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  
+
+  // this selected index to control the buttons
+    int _selectctedIndex = 0;
+
+    // this methos will update our selected index
+
+    /// when the user taps on the bottom bar
+    void navigationBottomBar(int index) {
+      setState(() {
+        _selectctedIndex = index;
+      });
+    }
+
+    // pages to dispaly
+    final List<Widget> _pages = [
+      // shop page
+      const ShopPage(),
+
+      // cart page
+      const CartPage(),
+    ];
+  @override
+  Widget build(BuildContext context) {
+    
+
+    return Scaffold(
+      bottomNavigationBar: BottomNavBar(
+        onTabChange: (index) => navigationBottomBar(index),
+      ),
+      body: _pages[_selectctedIndex],
+      backgroundColor: Colors.grey[300],
+    );
+  }
+}
